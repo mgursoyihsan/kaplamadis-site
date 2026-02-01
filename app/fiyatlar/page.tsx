@@ -7,7 +7,7 @@ async function getPricesWithTreatments() {
     // Fetch prices and expand related treatment
     try {
         return await directus.request(readItems('treatment_price', {
-            fields: ['*', 'treatment_id.title', 'treatment_id.slug']
+            fields: ['*', 'treatment_id.title', 'treatment_id.slug'] as any
         }));
     } catch (e) {
         return [];
